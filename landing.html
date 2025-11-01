@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BISA MEDIA.MCN</title>
+  <link rel="icon" type="image/png" href="images/Logo_Bisa.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    
+        h2.section-title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 25px;
+        }
+
+    body {
+      background: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      color: #222;
+    }
+
+    .container {
+      width: 50vw;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .topbar {
+      background-color: #004aad;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 25px;
+    }
+
+    .topbar .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar img {
+      height: 35px;
+    }
+
+    .topbar h4 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    /* 🔹 Gambar vertikal */
+    .aduh {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 40px;
+    }
+
+    .aduh img {
+      width: 100%;
+      max-width: 1080px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 2px solid #004aad;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .aduh img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    /* 🔹 Form Kontak */
+    .contact {
+      display: flex;
+      justify-content: center;
+      margin: 50px auto;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .contact-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form label {
+      font-weight: 600;
+      color: #004aad;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    .contact-form button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .contact-form button:hover {
+      background-color: #1ebe5d;
+    }
+
+    footer {
+      background: #004aad;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 100vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="left">
+        <img src="images/Logoyaa.png" alt="Logo">
+        <h4>BISA MEDIA.MCN</h4>
+      </div>
+    </div>
+
+    <!-- Gambar ala postingan IG -->
+    <section class="aduh">
+      <img src="images/Gambar1.png" alt="Sampul">
+      <img src="images/Gambar2.png" alt="Sampul">
+      <img src="images/Gambar3.png" alt="Sampul">
+    </section>
+
+    <!-- Form Kontak -->
+    <section>
+                  <h2 class="section-title">Join Sekarang Juga</h2>
+      <div class="contact">
+        <div class="contact-form">
+          <label for="name">Nama</label>
+          <input type="text" id="name" placeholder="Contoh: Aditya Firmansyah">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Contoh: aditya@gmail.com">
+
+          <label for="tiktok">Username TikTok</label>
+          <input type="text" id="tiktok" placeholder="Contoh: @aditya.firmansyah">
+
+          <label for="paket">Paket</label>
+          <select id="paket">
+            <option value="">Pilih Paket</option>
+            <option value="Mahasiswa">Mahasiswa (150.000)</option>
+            <option value="Reguler">Reguler (250.000)</option>
+            <option value="VIP">VIP (400.000)</option>
+            <option value="VVIP">VVIP (500.000)</option>
+          </select>
+
+          <button type="button" onclick="sendWhatsApp()">Kirim</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 BISA MEDIA.MCN. All Rights Reserved.</footer>
+  </div>
+
+  <script>
+    function sendWhatsApp() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const tiktok = document.getElementById("tiktok").value.trim();
+      const paket = document.getElementById("paket").value.trim();
+
+      if (!name || !email || !tiktok || !paket) {
+        alert("Harap isi semua kolom sebelum mengirim pesan.");
+        return;
+      }
+
+      const phoneNumber = "6287847687691";
+      const text = `Halo Bisa Media! 👋
+Perkenalkan, saya ${name} (${email}).
+Akun TikTok saya: ${tiktok}.
+Saya tertarik untuk mengambil paket *${paket}*.
+
+Mohon info lebih lanjut mengenai kerja samanya.`;
+
+      const encodedText = encodeURIComponent(text);
+      const url = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+
+</html>
