@@ -19,20 +19,20 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    
-        h2.section-title {
-            text-align: center;
-            font-size: 22px;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 25px;
-        }
+    h2.section-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 25px;
+    }
 
     body {
       background: #f4f7fc;
       display: flex;
       justify-content: center;
       color: #222;
+      scroll-behavior: smooth;
     }
 
     .container {
@@ -49,6 +49,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 25px;
+      animation: fadeInTop 1s ease forwards;
     }
 
     .topbar .left {
@@ -64,6 +65,18 @@
     .topbar h4 {
       margin: 0;
       font-weight: 600;
+    }
+
+    @keyframes fadeInTop {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* 🔹 Gambar vertikal */
@@ -82,13 +95,21 @@
       object-fit: cover;
       border-radius: 14px;
       border: 2px solid #004aad;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 1s ease;
+      cursor: pointer;
+    }
+
+    .aduh img.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .aduh img:hover {
       transform: scale(1.02);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 12px 25px rgba(0, 74, 173, 0.25);
     }
 
     /* 🔹 Form Kontak */
@@ -105,6 +126,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+      animation: fadeInUp 1.2s ease forwards;
     }
 
     .contact-form label {
@@ -113,8 +135,7 @@
     }
 
     .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
+    .contact-form select {
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
@@ -128,13 +149,14 @@
       padding: 12px;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.2s;
       font-weight: 600;
       font-size: 16px;
     }
 
     .contact-form button:hover {
       background-color: #1ebe5d;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -143,6 +165,57 @@
       text-align: center;
       padding: 15px;
       margin-top: 50px;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 🔹 Tombol Scroll Up/Down versi elegan */
+    .scroll-buttons {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .scroll-buttons button {
+      background: #007bff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.35s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-buttons button.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-buttons button:hover {
+      background: #0066dd;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.45);
+      transform: scale(1.1);
     }
 
     @media (max-width: 600px) {
@@ -155,7 +228,6 @@
 
 <body>
   <div class="container">
-    <!-- Topbar -->
     <div class="topbar">
       <div class="left">
         <img src="images/Logoyaa.png" alt="Logo">
@@ -163,16 +235,24 @@
       </div>
     </div>
 
-    <!-- Gambar ala postingan IG -->
     <section class="aduh">
-      <img src="images/Gambar1.png" alt="Sampul">
-      <img src="images/Gambar2.png" alt="Sampul">
-      <img src="images/Gambar3.png" alt="Sampul">
+      <img src="images/Gambar 1.jpg" alt="Sampul">
+      <img src="images/Gambar 2.jpg" alt="Sampul">
+      <img src="images/Gambar 3.jpg" alt="Sampul">
+      <img src="images/Gambar 4.jpg" alt="Sampul">
+      <img src="images/Gambar 5.jpg" alt="Sampul">
+      <img src="images/Gambar 6.jpg" alt="Sampul">
+      <img src="images/Gambar 7.jpg" alt="Sampul">
+      <img src="images/Gambar 8.jpg" alt="Sampul">
+      <img src="images/Gambar 9.jpg" alt="Sampul">
+      <img src="images/Gambar 10.jpg" alt="Sampul">
+      <img src="images/Gambar 11.jpg" alt="Sampul">
+      <img src="images/Gambar 12.jpg" alt="Sampul">
+      <img src="images/Gambar 13.jpg" alt="Sampul">
     </section>
 
-    <!-- Form Kontak -->
     <section>
-                  <h2 class="section-title">Join Sekarang Juga</h2>
+      <h2 class="section-title">Gabung Sekarang Juga</h2>
       <div class="contact">
         <div class="contact-form">
           <label for="name">Nama</label>
@@ -187,10 +267,10 @@
           <label for="paket">Paket</label>
           <select id="paket">
             <option value="">Pilih Paket</option>
-            <option value="Mahasiswa">Mahasiswa (150.000)</option>
-            <option value="Reguler">Reguler (250.000)</option>
-            <option value="VIP">VIP (400.000)</option>
-            <option value="VVIP">VVIP (500.000)</option>
+            <option value="Mahasiswa">Mahasiswa</option>
+            <option value="Reguler">Reguler</option>
+            <option value="VIP">VIP</option>
+            <option value="VVIP">VVIP</option>
           </select>
 
           <button type="button" onclick="sendWhatsApp()">Kirim</button>
@@ -198,24 +278,57 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>&copy; 2025 BISA MEDIA.MCN. All Rights Reserved.</footer>
   </div>
 
+  <!-- 🔹 Tombol Scroll Elegan -->
+  <div class="scroll-buttons">
+    <button id="scrollUp" title="Kembali ke Atas">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" viewBox="0 0 24 24">
+        <path d="M7 14l5-5 5 5H7z" />
+      </svg>
+    </button>
+    <button id="scrollDown" title="Ke Bawah">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5H7z" />
+      </svg>
+    </button>
+  </div>
+
   <script>
+    // 🌫️ Fade-in gambar
+    const images = document.querySelectorAll('.aduh img');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.2 });
+    images.forEach(img => observer.observe(img));
+
+    // 🪶 Parallax halus
+    window.addEventListener("scroll", () => {
+      images.forEach((img, i) => {
+        const speed = (i + 1) * 0.05;
+        img.style.transform = `translateY(${window.scrollY * speed * -0.02}px)`;
+      });
+    });
+
+    // 📱 WhatsApp
     function sendWhatsApp() {
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
       const tiktok = document.getElementById("tiktok").value.trim();
       const paket = document.getElementById("paket").value.trim();
-
       if (!name || !email || !tiktok || !paket) {
         alert("Harap isi semua kolom sebelum mengirim pesan.");
         return;
       }
 
       const phoneNumber = "6287847687691";
-      const text = `Halo Bisa Media! 👋
+      const emojiWave = "%F0%9F%91%8B";
+      const emojiSpark = "%E2%9C%A8";
+
+      const text = `Halo Bisa Media! ${decodeURIComponent(emojiWave)}${decodeURIComponent(emojiSpark)}
 Perkenalkan, saya ${name} (${email}).
 Akun TikTok saya: ${tiktok}.
 Saya tertarik untuk mengambil paket *${paket}*.
@@ -223,9 +336,28 @@ Saya tertarik untuk mengambil paket *${paket}*.
 Mohon info lebih lanjut mengenai kerja samanya.`;
 
       const encodedText = encodeURIComponent(text);
-      const url = `https://wa.me/${phoneNumber}?text=${encodedText}`;
-      window.open(url, "_blank");
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
     }
+
+    // 🔹 Scroll Up/Down
+    const scrollUp = document.getElementById("scrollUp");
+    const scrollDown = document.getElementById("scrollDown");
+
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      const max = document.body.scrollHeight - window.innerHeight;
+
+      if (y > 200) scrollUp.classList.add("show");
+      else scrollUp.classList.remove("show");
+
+      if (y < max - 200) scrollDown.classList.add("show");
+      else scrollDown.classList.remove("show");
+    });
+
+    scrollUp.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    scrollDown.addEventListener("click", () =>
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
+    );
   </script>
 </body>
 
